@@ -1,4 +1,37 @@
 $(function(){
+    //parte da interação com usuário
+    // seleciona todos os botões pela classe
+var btns = document.getElementsByClassName("btn");
+
+for(var bts_ of btns){
+   
+   bts_.onclick = function(){
+      
+      // seleciona todos os botões com a classe .btn dentro de #methodlearn
+      var childs = document.querySelectorAll("#methodlearn .btn");
+      var index = 0;
+      
+      // determina o index do botão com base 0
+      for(var el of childs){
+         if(this == el) break;
+         index++;
+      }
+      
+      var contents = document.getElementsByClassName("content");
+      
+      // esconde todos
+      for(var cts_ of contents){
+         cts_.style.display = "none";
+      }
+      
+      // mostra só a div do botão que foi clicado
+      contents[index].style.display = "block";
+      
+   }
+   
+}
+    //--------------------------------------------
+    //parte do jogo da velha
     //O conteúdo deve ficar aqui
     var vez = 1;
     var vencedor = "";
