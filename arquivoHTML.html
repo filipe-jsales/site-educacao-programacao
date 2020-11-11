@@ -6,6 +6,76 @@
         <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
+        <h1>Introdução</h1>
+            <p>Para onde você olhar, há tecnologia. No século XXI smartphones, computadores, casas inteligentes etc dominam o cotidiano e todas essas maravilhas não são mágia, mas computação. Para se adequar ao mundo de hoje e do futuro, inclusive ao mercado de trabalho, é necessário instruir as crianças e adolescentes no que é considerado por muitos o "novo inglês", a programação.</p>
+            <p>Muito se engana quem acha que programação é apenas para quem deseja seguir carreira da ciência da computação ou para quem quer fazer jogos ou sites. Essa habilidade tende a ser cada vez mais exigida pelo o mercado em todas as áreas de atuação. Para isso, é fundamental ensinar ou aprender cedo.</p>
+            <p>Tem curiosidade de aprender a programar mas não sabe por onde começar? nessa página você vai aprender os conceitos básicos de programação e inclusive escrever seus próprios programas!</p>
+        <h1>O que é programar ? 🤔</h1>
+            <p>O que é programar? para responder essa pergunta, imagine um computador como uma máquina que é capaz de fazer praticamente qualquer coisa, mas que tem medo de fazer sozinha e por isso ela precisa que você, o melhor amigo dela, diga passo a passo como fazer o que você quer que ela faça. Isso é programar!</p>
+            <figure>
+                <p><img src="imagens/coding_gif.gif" alt="nao funfou :/" width=480 height=480></p>
+                <figcaption>Coding GIF By Platzi</figcaption>
+            </figure>
+            <br>
+            <br>
+            
+            <p>Mas há um grande problema, você e o computador não falam o mesmo idioma. Enquanto você fala português, ele fala o que chamamos de "binário", um idioma que funciona com somente dois números: 0 e 1</p>
+            <p>Um computador, por exemplo, quando quer dizer olá, ele diz 01001111 01101100 11100001. Parece difícil, não? mas não se preocupe, vocês dois tem um amigo em comum, o nome dele é Portugol e ele sabe tanto portuguès quanto binário. Então, se você quiser que o computador escreva "olá", você não precisa escrever 01001111 01101100 11100001 e precisa escrever somente "escreva ('Olá')". Assim, o amigo portugol traduz o que você quer para o computador e ele executa o comando que você pediu. Simples, não?</p>
+
+            <!--Interação com usuário-->
+             <div class="background-content">
+                <div class="align-content">
+                   <h1>TESTE</h1>
+                   <div id="methodlearn">
+                      <button class="btn">Passo 1</button>
+                      <button class="btn">Passo 2</button>
+                      <button class="btn">Passo 3</button>
+                      <button class="btn">Passo 4</button>
+                      <div class="content">CRIACAO DE VARIAVEIS DAS 9 CASAS DO JOGO NA VELHA>>var vez = 1;
+                        var vencedor = "";
+                        function casasIguais(a, b, c){
+                            var casaA = $("#casa"+a);
+                            var casaB = $("#casa"+b);
+                            var casaC = $("#casa"+c);
+                            var fundoA = $("#casa"+a).css("background-image");
+                            var fundoB = $("#casa"+b).css("background-image");
+                            var fundoC = $("#casa"+c).css("background-image");</div>
+                      <div class="content">VALIDAÇÃO DAS 3 SEQUENCIAS CORRETAS>>>if( (fundoA == fundoB) && (fundoB == fundoC) && (fundoA != "none" && fundoA != "")){
+                        if(fundoA.indexOf("1.png") >= 0)
+                            vencedor = "1";
+                        else
+                            vencedor = "2";
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }</div>
+                      <div class="content"> FUNÇÃO PARA VERIFICAR O FIM DO JOGO>>function verificarFimDeJogo(){
+                        if( casasIguais(1, 2, 3) || casasIguais(4, 5, 6) || casasIguais(7, 8, 9) ||
+                            casasIguais(1, 4, 7) || casasIguais(2, 5, 8) || casasIguais(3, 6, 9) ||
+                            casasIguais(1, 5, 9) || casasIguais(3, 5, 7)
+                            ){
+                            $("#resultado").html("O jogador " + vencedor + " venceu! ");
+                            $(".casa").off("click");
+                        }
+                    }</div>
+                      <div class="content">FUNCAO RESPONSAVEL POR ADICIONAR BOLINHA E XISZINHO NA TELA>>>$(".casa").click(function(){
+                        var bg = $(this).css("background-image");
+                        if(bg == "none" || bg == "")
+                        {          
+                            var fig = "url(" + vez.toString() + ".png)";
+                            $(this).css("background", fig);
+                            vez = (vez == 1? 2:1); 
+                            verificarFimDeJogo();
+                        }
+                    });
+                    });</div>
+                   </div>
+                </div>
+             </div>
+
+            <!--Implementação do jogo da velha-->
             <div id="jogo">
                 <div class="linha">
                     <div class="casa" id="casa1"></div>
