@@ -61,6 +61,8 @@ for(var bts_ of btns){
             ){
             $("#resultado").html("<h1>O jogador " + vencedor + " venceu! </h1>");
             $(".casa").off("click");
+        }else{
+            $("#resultado").html("<h1>Deu velha!</h1>");
         }
     }
     
