@@ -32,46 +32,77 @@
                       <button class="btn">Passo 2</button>
                       <button class="btn">Passo 3</button>
                       <button class="btn">Passo 4</button>
-                      <div class="content">CRIACAO DE VARIAVEIS DAS 9 CASAS DO JOGO NA VELHA>>var vez = 1;
-                        var vencedor = "";
-                        function casasIguais(a, b, c){
-                            var casaA = $("#casa"+a);
-                            var casaB = $("#casa"+b);
-                            var casaC = $("#casa"+c);
-                            var fundoA = $("#casa"+a).css("background-image");
-                            var fundoB = $("#casa"+b).css("background-image");
-                            var fundoC = $("#casa"+c).css("background-image");</div>
-                      <div class="content">VALIDAÇÃO DAS 3 SEQUENCIAS CORRETAS>>>if( (fundoA == fundoB) && (fundoB == fundoC) && (fundoA != "none" && fundoA != "")){
-                        if(fundoA.indexOf("1.png") >= 0)
-                            vencedor = "1";
-                        else
-                            vencedor = "2";
-                        return true;
-                    }
-                    else{
-                        return false;
-                    }
+                      <div class="content">
+                          <pre>
+                              <code>
+                                Criação de variáveis no jogo da velha:
+
+                                var vez = 1;
+                                var vencedor = "";
+                                function casasIguais(a, b, c){
+                                    var casaA = $("#casa"+a);
+                                    var casaB = $("#casa"+b);
+                                    var casaC = $("#casa"+c);
+                                    var fundoA = $("#casa"+a).css("background-image");
+                                    var fundoB = $("#casa"+b).css("background-image");
+                                    var fundoC = $("#casa"+c).css("background-image");
+                              </code>
+                          </pre>
+                      </div>
+                      <div class="content">
+                          <pre>
+                              <code>
+                                Validação das três sequências corretas:
+                                
+                                if( (fundoA == fundoB) && (fundoB == fundoC) && (fundoA != "none" && fundoA != "")){
+                                    if(fundoA.indexOf("1.png") >= 0)
+                                        vencedor = "1";
+                                    else
+                                        vencedor = "2";
+                                    return true;
+                                }
+                                else{
+                                    return false;
+                                }
+                              </code>
+                          </pre>
                 }</div>
-                      <div class="content"> FUNÇÃO PARA VERIFICAR O FIM DO JOGO>>function verificarFimDeJogo(){
-                        if( casasIguais(1, 2, 3) || casasIguais(4, 5, 6) || casasIguais(7, 8, 9) ||
-                            casasIguais(1, 4, 7) || casasIguais(2, 5, 8) || casasIguais(3, 6, 9) ||
-                            casasIguais(1, 5, 9) || casasIguais(3, 5, 7)
-                            ){
-                            $("#resultado").html("O jogador " + vencedor + " venceu! ");
-                            $(".casa").off("click");
-                        }
-                    }</div>
-                      <div class="content">FUNCAO RESPONSAVEL POR ADICIONAR BOLINHA E XISZINHO NA TELA>>>$(".casa").click(function(){
-                        var bg = $(this).css("background-image");
-                        if(bg == "none" || bg == "")
-                        {          
-                            var fig = "url(" + vez.toString() + ".png)";
-                            $(this).css("background", fig);
-                            vez = (vez == 1? 2:1); 
-                            verificarFimDeJogo();
-                        }
-                    });
-                    });</div>
+                      <div class="content"> 
+                          <pre>
+                              <code>
+                                Função que verifica o fim do jogo:
+
+                                function verificarFimDeJogo(){
+                                    if( casasIguais(1, 2, 3) || casasIguais(4, 5, 6) || casasIguais(7, 8, 9) ||
+                                        casasIguais(1, 4, 7) || casasIguais(2, 5, 8) || casasIguais(3, 6, 9) ||
+                                        casasIguais(1, 5, 9) || casasIguais(3, 5, 7)
+                                        ){
+                                        $("#resultado").html("O jogador " + vencedor + " venceu! ");
+                                        $(".casa").off("click");
+                                    }
+                                }
+                              </code>
+                          </pre>
+                      </div>
+                      <div class="content">
+                          <pre>
+                              <code>
+                                Função responsável por adicionar "O" e "X" no jogo:
+                                
+                                $(".casa").click(function(){
+                                    var bg = $(this).css("background-image");
+                                    if(bg == "none" || bg == "")
+                                    {          
+                                        var fig = "url(" + vez.toString() + ".png)";
+                                        $(this).css("background", fig);
+                                        vez = (vez == 1? 2:1); 
+                                        verificarFimDeJogo();
+                                    }
+                                });
+                                });
+                              </code>
+                          </pre>
+                      </div>
                    </div>
                 </div>
              </div>
