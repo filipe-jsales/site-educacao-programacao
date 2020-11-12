@@ -19,6 +19,7 @@
     border-right:solid 1px;
     float:left;
 }
+
 /* header com fundo cinza */
 .header {
     overflow: hidden;
@@ -85,3 +86,12 @@
     margin-left:-100%; 
     margin-right:-100%; 
   } 
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+    font-size: 16;
+  }
+  
